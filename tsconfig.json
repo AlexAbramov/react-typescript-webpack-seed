@@ -8,9 +8,10 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": true,
+    "jsx": "react",
     "suppressImplicitAnyIndexErrors": true,
     "lib": ["es7", "es6", "dom"]
-  },
+  },  
   "exclude": [
     "node_modules",
     "dist"

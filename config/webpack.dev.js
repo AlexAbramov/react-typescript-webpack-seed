@@ -8,13 +8,6 @@ var commonConfig = require('./webpack.common.js');
 module.exports = webpackMerge(commonConfig, {
   devtool: 'cheap-module-eval-source-map',
 
-  output: {
-    path: helpers.root('.'),
-    sourceMapFilename: '[name].js.map',
-    filename: '[name].js',
-    chunkFilename: '[name].chunk.js'
-  },
-
   plugins: [
     new ExtractTextPlugin('[name].css')
   ],

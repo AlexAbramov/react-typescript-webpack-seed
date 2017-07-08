@@ -6,7 +6,12 @@ var webpack = require('webpack');
 module.exports = {
   entry: {
     'vendor': './src/vendor.ts',
-    'app': './src/app.ts'
+    'index': './src/index.ts'
+  },
+
+  output: {
+    filename: '[name].js',
+    chunkFilename: '[name].chunk.js'
   },
 
   resolve: {
@@ -16,7 +21,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         use: ['awesome-typescript-loader']
       },
       {
@@ -53,7 +58,7 @@ module.exports = {
     }),
 
     new webpack.DefinePlugin({
-      react_version: JSON.stringify(require(helpers.root("node_modules","@react/package.json")).version),
+      react_version: JSON.stringify(require(helpers.root("node_modules","react/package.json")).version),
       webpack_version: JSON.stringify(require(helpers.root("node_modules","webpack/package.json")).version)
     })    
   ]
